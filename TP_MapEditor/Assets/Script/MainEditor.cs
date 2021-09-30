@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design.Serialization;
+using System.IO;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
@@ -25,12 +26,18 @@ public class MainEditor : MonoBehaviour
 
     void Start()
     {
-        map.FillMap();
+        if (map.Load())
+        {
+            Debug.Log("Loaded");
+        }
+        else map.FillMap();
         
         cam = Camera.main;
         cam.transform.position = new Vector3(cam.orthographicSize*cam.aspect,cam.orthographicSize,0f);
 
         grid = map.gameObject.GetComponent<GridLayout>();
+        
+        
     }
 
     // Update is called once per frame

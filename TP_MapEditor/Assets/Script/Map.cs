@@ -15,12 +15,14 @@ public class Map : MonoBehaviour
     public int width = 0;
     public List<Tile> baseTiles;
     private int[,] tab;
-    
+    private string path;
     private Tilemap map;
 
     private void Start()
     {
+        path = Application.persistentDataPath + "/map.xml";
         map = GetComponentInChildren<Tilemap>();
+        
     }
 
     public void PutTile(Vector3Int pos, Tile tile)
@@ -53,6 +55,19 @@ public class Map : MonoBehaviour
         return idx;
     }
 
+    public bool Load()
+    {
+        if (!File.Exists(path)) return false;
+        
+        XmlSerializer xs = new XmlSerializer(typeof(MapInfos));
+        using (StreamReader rd = new StreamReader(path))
+        {
+            MapInfos data = xs.Deserialize(rd) as MapInfos;
+        }
+
+        return true;
+    }
+
     public void Save()
     {
         MapInfos data = new MapInfos();
@@ -69,13 +84,13 @@ public class Map : MonoBehaviour
                 idx++;
             }
         }
-        
-        
+
+
         XmlSerializer xs = new XmlSerializer(typeof(MapInfos));
-        using (var stream = new FileStream(Application.persistentDataPath+"/map.xml", FileMode.Create))
+        using (var stream = new FileStream(path, FileMode.Create))
         {
             xs.Serialize(stream, data);
-            print("succesfully saved " + data + " at " + Application.persistentDataPath+"/map.xml");
+            print("succesfully saved " + data + " at " + path);
         }
         
     }
