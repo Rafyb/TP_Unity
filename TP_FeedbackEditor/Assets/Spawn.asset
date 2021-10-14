@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc9e03f69faab9499183bbf445cf089, type: 3}
+  m_Name: Spawn
+  m_EditorClassIdentifier: 
+  GameObject: {fileID: 0}
+  Name: 
+  Feedbacks:
+  - id: 0
+  - id: 1
+  - id: 2
+  - id: 3
+  references:
+    version: 1
+    00000000:
+      type: {class: InstantiateFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        Prefab: {fileID: 0}
+    00000001:
+      type: {class: InstantiateFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        Prefab: {fileID: 0}
+    00000002:
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        Timer: 5
+    00000003:
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        Timer: 0
