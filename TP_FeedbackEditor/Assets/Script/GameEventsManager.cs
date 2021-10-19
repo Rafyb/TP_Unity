@@ -9,6 +9,8 @@ public class GameEventsManager : MonoBehaviour
     public List<GameEvent> GameEvents;
 
     private static Dictionary<string, GameEvent> _events;
+    
+    
 
     void Awake()
     {
@@ -23,19 +25,14 @@ public class GameEventsManager : MonoBehaviour
 
     public static void PlayEvent(string eventName, GameObject gameObject)
     {
-        _events[eventName].GameObject = gameObject;
-        _events[eventName].Execute();
+        //Debug.Log(_events[eventName]);
+        GameEventInstance gameEvent = new GameEventInstance();
+        gameEvent.GameEvent = _events[eventName];
+        gameEvent.GameObject = gameObject;
+
+        s_instance.StartCoroutine(gameEvent.Execute());
     }
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
 }

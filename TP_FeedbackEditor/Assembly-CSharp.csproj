@@ -52,11 +52,16 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\GameEvent.cs" />
-     <Compile Include="Assets\Script\GameFeedback.cs" />
-     <Compile Include="Assets\Script\InstantiateFeedback.cs" />
-     <Compile Include="Assets\Script\WaitFeedback.cs" />
      <Compile Include="Assets\Script\GameEventsManager.cs" />
+     <Compile Include="Assets\Script\GameEvent.cs" />
+     <Compile Include="Assets\Script\FeedBack\WaitFeedback.cs" />
+     <Compile Include="Assets\Script\FeedBack\InstantiateFeedback.cs" />
+     <Compile Include="Assets\Script\FeedBack\GameFeedback.cs" />
+     <Compile Include="Assets\Script\Game.cs" />
+     <Compile Include="Assets\Script\FeedBack\ShakeCamFeedback.cs" />
+     <Compile Include="Assets\Script\FeedBack\SoundFeedback.cs" />
+     <Compile Include="Assets\Script\FeedBack\FreezeFeedback.cs" />
+     <Compile Include="Assets\Script\GameEventInstance.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

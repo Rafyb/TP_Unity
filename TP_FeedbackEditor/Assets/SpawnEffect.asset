@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc9e03f69faab9499183bbf445cf089, type: 3}
+  m_Name: SpawnEffect
+  m_EditorClassIdentifier: 
+  Name: SpawnEffect
+  Feedbacks:
+  - id: 0
+  - id: 1
+  - id: 2
+  - id: 3
+  - id: 4
+  - id: 5
+  - id: 6
+  - id: 7
+  references:
+    version: 1
+    00000000:
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        Timer: 0.3
+    00000001:
+      type: {class: SoundFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        source: {fileID: 0}
+        volume: 0.52
+    00000002:
+      type: {class: ShakeCam, ns: , asm: Assembly-CSharp}
+      data:
+        duration: 1
+        magnitude: 0.4
+    00000003:
+      type: {class: InstantiateFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        Prefab: {fileID: 4523697583663116498, guid: 7fbf1b23258133e478da016aed6d935d, type: 3}
+    00000004:
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        Timer: 0.8
+    00000005:
+      type: {class: InstantiateFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        Prefab: {fileID: 4523697583663116498, guid: 7fbf1b23258133e478da016aed6d935d, type: 3}
+    00000006:
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        Timer: 0
+    00000007:
+      type: {class: FreezeFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        Timer: 0.2

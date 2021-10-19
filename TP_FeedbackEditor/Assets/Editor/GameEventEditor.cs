@@ -52,7 +52,7 @@ public class GameEventEditor : Editor
         serializedObject.Update();
 
         GameEvent gameEvent = target as GameEvent;
-        
+        gameEvent.Name = EditorGUILayout.TextField("Object Name: ", gameEvent.Name);
 
         int newItem = EditorGUILayout.Popup(0, _typesStr) -1;
         if (newItem >= 0)
@@ -65,6 +65,8 @@ public class GameEventEditor : Editor
             _feedbacksFoldout.Add(false);
         }
         
+        
+
         for (int i = 0; i < _feedbacks.arraySize; i++)
         {
            
@@ -85,8 +87,8 @@ public class GameEventEditor : Editor
             foldoutRect.width = 300;
             foldoutRect.height = 17;
             
-            if(type.Equals("InstantiateFeedback")) EditorGUI.DrawRect(backgroundRect,Color.green);
-            if(type.Equals("WaitFeedback")) EditorGUI.DrawRect(backgroundRect,Color.white);
+            EditorGUI.DrawRect(backgroundRect,gameEvent.Feedbacks[i].color());
+
 
             _feedbacksFoldout[i] = GUI.Toggle(foldoutRect, _feedbacksFoldout[i], gameEvent.Feedbacks[i].ToString(),EditorStyles.foldout);
 
