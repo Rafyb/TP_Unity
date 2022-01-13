@@ -5,14 +5,8 @@ using UnityEngine;
 public class CmdJump : Command
 {
 
-    public CmdJump(Game g)
+    public override void Execute(Game g)
     {
-        _game = g;
-    }
-    
-
-    public override void Execute()
-    {
-        
+        g.controller.OnJump?.Invoke();
     }
 }

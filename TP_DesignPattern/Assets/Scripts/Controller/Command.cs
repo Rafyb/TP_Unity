@@ -1,13 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CommandType
+{
+    RESPAWN, JUMP, MOVE, SHOOT
+}
 public class Command 
 {
-    protected Game _game;
 
-    public virtual void Execute()
+    public virtual void Execute(Game g)
     {
-        
+        throw new Exception("Command not implemented");
     }
 }

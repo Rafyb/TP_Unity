@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,8 @@ public enum EntityType
     Joueur, Ennemi, Tir
 }
 
-public class EntityGenerator : MonoBehaviour
+[Serializable]
+public class EntityGenerator
 {
 
     public GameObject prefabJoueur;

@@ -9,13 +9,14 @@ public class Menu : MonoBehaviour
     
     public void SetDifficultNormal()
     {
-        Settings.Instance.difficulty = Difficulty.Normal;
+ 
+        Settings.Instance.GetComponent<Settings>().difficulty = Difficulty.Normal;
         menu.SetActive(false);
     }
 
     public void SetDifficultHard()
     {
-        Settings.Instance.difficulty = Difficulty.Hard;
+        Settings.Instance.GetComponent<Settings>().difficulty = Difficulty.Hard;
         menu.SetActive(false);
     }
 }
